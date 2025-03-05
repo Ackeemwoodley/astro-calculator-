@@ -1,0 +1,90 @@
+
+
+/* Body style */
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+     background-color: #141414;
+    color: #e40f0f;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('https://wallpapers.com/images/featured/space-sjryfre8k8f6i3ge.jpg  '); /* Add the path to your image here */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+
+}
+
+/* Container for the form and elements */
+.container {
+  
+    background-color: #ff0379;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Title styling */
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-align: justify ;
+}
+
+/* Input and select box styles */
+input, select {
+    background-image: url('https://wallpapers.com/images/featured/space-sjryfre8k8f6i3ge.jpg  ');
+    color: black;
+    width: 60%; /* Reduce width for better centering */
+    padding: 10px;
+    margin: 10px 0; /* Auto centers horizontally */
+    border: 1px solid #eb0e0e;
+    border-radius: 4px;
+    display:inline-block; 
+    box-sizing: border-box;
+    
+}
+
+/* Button hover effect */
+button {
+        background-color:Red; 
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+      }
+
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Output text styling */
+#output {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #fdfbfb;
+    margin-top: 20px;
+    display: inline-block;
+    
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}
