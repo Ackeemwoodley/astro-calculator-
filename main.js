@@ -1,5 +1,6 @@
  // Write your JavaScript code here! 
- var planets = [ 
+ // Populate the dropdown element with the data found in the planets array. 
+var planets = [ 
     ['Pluto', 0.06,], 
     ['Neptune', 1.148], 
     ['Uranus', 0.917], 
@@ -8,13 +9,13 @@
     ['Mars', 0.3895], 
     ['Moon', 0.1655], 
     ['Earth', 1], 
-    ['Venus', 0.9032], 
+    ['Venus', 0.9032],  
     ['Mercury', 0.377], 
     ['Sun', 27.9] 
 ];
+    //reverse order so sun is first 
 planets.reverse();
-    // 1. Populate the dropdown element with the data found in the planets array. 
-    // The value of each option should be the planet's name. 
+
     // Use the following built-in methods: 
     // `.forEach` `document.createElement` `document.getElementById` `.appendChild` 
     planets.forEach(planet => {
@@ -23,6 +24,22 @@ planets.reverse();
         option.value = planet[0];
         document.getElementById('planets').appendChild(option);
     })
+// fuction that removes pluto from the dropdown
+    const removePlutoCheckbox = document.getElementById('remove-pluto-checkbox');
+    const planetsDropdown = document.getElementById('planets');
+
+    // Store Pluto's option so we can re-add it if needed
+    let plutoOption = planetsDropdown.querySelector('option[value="Pluto"]');
+
+    removePlutoCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+            if (plutoOption) {
+                plutoOption.remove(); // Remove Pluto from dropdown
+            }
+        } else {
+            planetsDropdown.appendChild(plutoOption); // Re-add Pluto if unchecked
+        }
+    });
 
 
 function calculateWeight(weight, planetName) { 
@@ -54,12 +71,4 @@ document.getElementById('output').textContent = `If you were on ${planetName}, y
 } 
 
     // 7. Set the #calculate-button element's onclick method to use the handleClickEvent function.
-    document.getElementById("calculate-button").addEventListener("click", handleClickEvent);
-    // 8. Make it look nice by attaching  a style.css file to your index.html and writing some basic styling, 
-    // feel free to add classes and id's to the HTML elements as you need, 
-    // import.a google font and use it for some or all of the text on your page. 
-
-
-    // Bonus Challenges 
-    // 8. Reverse the drop down order so that the sun is first.
-    
+     document.getElementById("calculate-button").addEventListener("click", handleClickEvent);
